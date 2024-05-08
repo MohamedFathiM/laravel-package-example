@@ -29,7 +29,6 @@ class TestCase extends Orchestra
     {
         Schema::dropAllTables();
 
-
         $migration = include __DIR__.'/../database/migrations/create_package_example_table.php.stub';
         $migration->up();
     }
