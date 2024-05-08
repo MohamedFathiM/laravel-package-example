@@ -4,6 +4,7 @@ namespace Example\LaravelPackageExample\Tests;
 
 use Example\LaravelPackageExample\LaravelPackageExampleServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -26,11 +27,10 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        Schema::dropAllTables();
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-package-example_table.php.stub';
+
+        $migration = include __DIR__.'/../database/migrations/create_package_example_table.php.stub';
         $migration->up();
-        */
     }
 }
