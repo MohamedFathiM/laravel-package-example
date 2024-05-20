@@ -13,6 +13,9 @@ class MyModel extends Model
         'name',
     ];
 
+    /**
+     * @property string $name
+     */
     public function getUpperCaseName(): string
     {
         return strtoupper($this->name);
